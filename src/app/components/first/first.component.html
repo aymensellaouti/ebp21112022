@@ -1,0 +1,21 @@
+<p>first {{ name }}</p>
+<app-second></app-second>
+
+<div [hidden]="isHidden" [style.backgroundColor]="color">
+  je suis coloré par la variable d'état color
+</div>
+<button (click)="interrupteur()" class="btn btn-primary">
+  interrupteur
+</button>
+
+<input #messageInput (blur)="changeMessage(messageInput.value)" type="text" class="form-control">
+<p>Ce qu'il y a dans le input : {{message}}</p>
+<!--
+
+  BALISES => attributs/propriéts
+
+  TEXTE
+
+  EVENT
+
+ -->
