@@ -9,6 +9,9 @@ import { ColorComponent } from './components/color/color.component';
 import { TwoComponent } from './components/two/two.component';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
+import { SommeComponent } from './components/somme/somme.component';
+import { FilsComponent } from './components/fils/fils.component';
+import { PereComponent } from './components/pere/pere.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import { CardComponent } from './components/card/card.component';
     ColorComponent,
     TwoComponent,
     CardComponent,
+    SommeComponent,
+    FilsComponent,
+    PereComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
