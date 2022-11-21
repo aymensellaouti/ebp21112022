@@ -1,0 +1,15 @@
+<div [style.backgroundColor]="color">
+  EPB
+</div>
+
+<input
+  #inputColor
+  (change)="changeColor(inputColor.value)"
+  type="text" class="form-control">
+
+  <!--     (click)="changeColor(defaultColor)" -->
+  <button
+    (click)="reset()"
+    class="btn btn-danger">
+    reset
+  </button>
