@@ -12,6 +12,10 @@ import { CardComponent } from './components/card/card.component';
 import { SommeComponent } from './components/somme/somme.component';
 import { FilsComponent } from './components/fils/fils.component';
 import { PereComponent } from './components/pere/pere.component';
+import { CvComponent } from './cv/cv/cv.component';
+import { ItemComponent } from './cv/item/item.component';
+import { ListComponent } from './cv/list/list.component';
+import { DetailComponent } from './cv/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +28,10 @@ import { PereComponent } from './components/pere/pere.component';
     SommeComponent,
     FilsComponent,
     PereComponent,
+    CvComponent,
+    ItemComponent,
+    ListComponent,
+    DetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
