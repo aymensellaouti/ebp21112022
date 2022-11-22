@@ -20,6 +20,7 @@ import { NgstyleTestComponent } from './directives/ngstyle-test/ngstyle-test.com
 import { MiniwordComponent } from './directvies/miniword/miniword.component';
 import { NgClassTestComponent } from './directives/ng-class-test/ng-class-test.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { RainbowDirective } from './directives/rainbow.directive';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     MiniwordComponent,
     NgClassTestComponent,
     HighlightDirective,
+    RainbowDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
