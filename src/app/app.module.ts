@@ -24,6 +24,7 @@ import { RainbowDirective } from './directives/rainbow.directive';
 import { BtcToUsdPipe } from './pipes/btc-to-usd.pipe';
 import { TabFibComponent } from './components/tab-fib/tab-fib.component';
 import { FiboPipe } from './pipes/fibo.pipe';
+import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { FiboPipe } from './pipes/fibo.pipe';
     BtcToUsdPipe,
     TabFibComponent,
     FiboPipe,
+    DefaultImagePipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
