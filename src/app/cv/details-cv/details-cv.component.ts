@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Cv } from '../model/cv';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CvService } from '../services/cv.service';
+import { ROUTES } from '../../config/routes.config';
 
 @Component({
   selector: 'app-details-cv',
@@ -8,7 +11,24 @@ import { Cv } from '../model/cv';
 })
 export class DetailsCvComponent implements OnInit {
   cv: Cv | null = null;
-  constructor() {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private cvService: CvService,
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params) => {
+      this.cv = this.cvService.getCvById(+params['id']);
+      if (!this.cv) {
+        this.router.navigate([ROUTES.cv]);
+      }
+    });
+  }
+  delete(): void {
+    if (this.cv) {
+      this.cvService.deleteCv(this.cv);
+      this.router.navigate([ROUTES.cv]);
+    }
+  }
 }
