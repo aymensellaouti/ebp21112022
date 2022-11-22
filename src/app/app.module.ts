@@ -16,6 +16,7 @@ import { CvComponent } from './cv/cv/cv.component';
 import { ItemComponent } from './cv/item/item.component';
 import { ListComponent } from './cv/list/list.component';
 import { DetailComponent } from './cv/detail/detail.component';
+import { NgstyleTestComponent } from './directives/ngstyle-test/ngstyle-test.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { DetailComponent } from './cv/detail/detail.component';
     ItemComponent,
     ListComponent,
     DetailComponent,
+    NgstyleTestComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
