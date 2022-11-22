@@ -21,6 +21,9 @@ import { MiniwordComponent } from './directvies/miniword/miniword.component';
 import { NgClassTestComponent } from './directives/ng-class-test/ng-class-test.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { RainbowDirective } from './directives/rainbow.directive';
+import { BtcToUsdPipe } from './pipes/btc-to-usd.pipe';
+import { TabFibComponent } from './components/tab-fib/tab-fib.component';
+import { FiboPipe } from './pipes/fibo.pipe';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import { RainbowDirective } from './directives/rainbow.directive';
     NgClassTestComponent,
     HighlightDirective,
     RainbowDirective,
+    BtcToUsdPipe,
+    TabFibComponent,
+    FiboPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
