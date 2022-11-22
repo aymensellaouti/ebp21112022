@@ -25,6 +25,8 @@ import { BtcToUsdPipe } from './pipes/btc-to-usd.pipe';
 import { TabFibComponent } from './components/tab-fib/tab-fib.component';
 import { FiboPipe } from './pipes/fibo.pipe';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
+import { LoggerService } from './services/logger.service';
+import { TodoComponent } from './todo/component/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -50,9 +52,10 @@ import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
     TabFibComponent,
     FiboPipe,
     DefaultImagePipe,
+    TodoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  providers: [LoggerService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
