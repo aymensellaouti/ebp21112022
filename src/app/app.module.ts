@@ -17,6 +17,9 @@ import { ItemComponent } from './cv/item/item.component';
 import { ListComponent } from './cv/list/list.component';
 import { DetailComponent } from './cv/detail/detail.component';
 import { NgstyleTestComponent } from './directives/ngstyle-test/ngstyle-test.component';
+import { MiniwordComponent } from './directvies/miniword/miniword.component';
+import { NgClassTestComponent } from './directives/ng-class-test/ng-class-test.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { NgstyleTestComponent } from './directives/ngstyle-test/ngstyle-test.com
     ListComponent,
     DetailComponent,
     NgstyleTestComponent,
+    MiniwordComponent,
+    NgClassTestComponent,
+    HighlightDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
