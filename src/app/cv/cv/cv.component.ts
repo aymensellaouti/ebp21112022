@@ -3,6 +3,7 @@ import { Cv } from '../model/cv';
 import { LoggerService } from '../../services/logger.service';
 import { SayHelloService } from '../../services/say-hello.service';
 import { TodoService } from '../../todo/service/todo.service';
+import { CvService } from '../services/cv.service';
 
 @Component({
   selector: 'app-cv',
@@ -17,34 +18,14 @@ export class CvComponent implements OnInit {
   constructor(
     private loggerService: LoggerService,
     private sayHelloService: SayHelloService,
-    private todoService: TodoService
-  ) {
-    this.cvs = [
-      new Cv(
-        1,
-        'sellaouti',
-        'aymen',
-        'teacher',
-        'rotating_card_profile2.png',
-        40,
-        '1111'
-      ),
-      new Cv(
-        2,
-        'sellaouti',
-        'skander',
-        'dev',
-        'rotating_card_profile3.png',
-        40,
-        '1111'
-      ),
-      new Cv(2, 'sellaouti', 'skander', 'dev', '   ', 40, '1111'),
-    ];
-  }
+    private todoService: TodoService,
+    private cvService: CvService
+  ) {}
 
   ngOnInit(): void {
     this.loggerService.logger('je suis le cvComponent');
     this.sayHelloService.hello();
+    this.cvs = this.cvService.getCvs();
   }
   selectCv(cv: Cv): void {
     this.selectedCv = cv;
