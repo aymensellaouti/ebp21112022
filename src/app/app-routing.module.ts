@@ -9,7 +9,7 @@ import { ROUTES } from './config/routes.config';
 import { SecondComponent } from './components/second/second.component';
 import { Nf404Component } from './components/nf404/nf404.component';
 import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
-import { LoginComponent } from './component/login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 
 const routes: Routes = [
   { component: FirstComponent, path: ROUTES.home },

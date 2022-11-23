@@ -7,6 +7,7 @@ import { CvService } from '../services/cv.service';
 import { Router } from '@angular/router';
 import { ROUTES } from '../../config/routes.config';
 import { distinctUntilChanged } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cv',
@@ -24,13 +25,24 @@ export class CvComponent implements OnInit {
     private sayHelloService: SayHelloService,
     private todoService: TodoService,
     private cvService: CvService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
     this.loggerService.logger('je suis le cvComponent');
     this.sayHelloService.hello();
-    this.cvs = this.cvService.getCvs();
+    this.cvService.getCvs().subscribe({
+      next: (cvs: Cv[]) => {
+        this.cvs = cvs;
+      },
+      error: (e) => {
+        this.cvs = this.cvService.getFakeCvs();
+        this.toastr.warning(
+          'Les données sont fake, veuillez contacter l admin'
+        );
+      },
+    });
     this.cvService.selectCv$
       .pipe(distinctUntilChanged())
       .subscribe((jeMenFou) => this.nb++);

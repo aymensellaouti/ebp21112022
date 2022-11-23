@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
@@ -34,8 +35,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { Nf404Component } from './components/nf404/nf404.component';
 import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 import { TestFormComponent } from './components/test-form/test-form.component';
-import { LoginComponent } from './component/login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 import { ObservableComponent } from './components/observable/observable.component';
+import { TestHttpComponent } from './components/test-http/test-http.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +71,7 @@ import { ObservableComponent } from './components/observable/observable.componen
     TestFormComponent,
     LoginComponent,
     ObservableComponent,
+    TestHttpComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,6 +79,7 @@ import { ObservableComponent } from './components/observable/observable.componen
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     FormsModule,
+    HttpClientModule,
   ],
   providers: [LoggerService],
   bootstrap: [AppComponent],
