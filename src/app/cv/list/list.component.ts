@@ -13,7 +13,7 @@ export class ListComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  forwardItem(cv: Cv): void {
+  /*   forwardItem(cv: Cv): void {
     this.forwardCv.emit(cv);
-  }
+  } */
 }

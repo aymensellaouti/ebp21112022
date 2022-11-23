@@ -1,4 +1,7 @@
 <div class="row">
+  <div class="alert alert-info">
+    Le nombre de click sur un cv : {{nb}}
+  </div>
   <!--   <button
     (click)="home()"
     class="btn btn-danger">
@@ -8,10 +11,12 @@
     {{date | date: 'long' | uppercase}}
   </div>
   <div class="col">
-    <app-list [cvs]="cvs" (forwardCv)="selectCv($event)"></app-list>
+    <!-- (forwardCv)="selectCv($event)" -->
+    <app-list [cvs]="cvs"></app-list>
   </div>
   <div class="col">
-    <app-detail [cv]="selectedCv"></app-detail>
+    <!-- [cv]="selectedCv" -->
+    <app-detail></app-detail>
   </div>
 </div>
 <app-embauche></app-embauche>

@@ -3,6 +3,7 @@
       'list-group-item-primary': isOdd,
       'list-group-item-secondary': !isOdd
     }">
-    <app-item (selectItem)="forwardItem($event)" [cv]="cv"></app-item>
+    <!-- (selectItem)="forwardItem($event)" -->
+    <app-item [cv]="cv"></app-item>
   </li>
 </ol>

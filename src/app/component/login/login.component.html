@@ -1,16 +1,21 @@
-<form>
+<form #loginForm="ngForm">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <input #emailInput="ngModel" ngModel name="email" email required type="email" class="form-control"
+      id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <div *ngIf="emailInput.invalid && emailInput.touched" class="alert alert-danger">
+      L'email est obligatoire et doit être valide
+    </div>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input #pwdInput="ngModel" ngModel name="password" required minlength="4" type="password" class="form-control"
+      id="exampleInputPassword1" placeholder="Password">
+    <div *ngIf="pwdInput.invalid && emailInput.touched" class="alert alert-danger">
+      Le mot de passe doit avoir au minimum 4 caractères.
+    </div>
   </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button
+    (click)="login(loginForm)"
+    [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Submit</button>
 </form>
