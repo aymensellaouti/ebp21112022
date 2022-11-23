@@ -10,11 +10,14 @@ import { SecondComponent } from './components/second/second.component';
 import { Nf404Component } from './components/nf404/nf404.component';
 import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 import { LoginComponent } from './auth/login/login.component';
+import { AddCvComponent } from './cv/add-cv/add-cv.component';
+import { AuthGuard } from './auth/guard/auth.guard';
 
 const routes: Routes = [
   { component: FirstComponent, path: ROUTES.home },
   { component: CvComponent, path: ROUTES.cv },
   { component: LoginComponent, path: ROUTES.login },
+  { component: AddCvComponent, path: ROUTES.addCv, canActivate: [AuthGuard] },
   { component: DetailsCvComponent, path: ROUTES.cvDetail },
   { component: TodoComponent, path: ROUTES.todo },
   { component: MiniwordComponent, path: 'word' },

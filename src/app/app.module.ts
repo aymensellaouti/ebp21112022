@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +38,8 @@ import { TestFormComponent } from './components/test-form/test-form.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ObservableComponent } from './components/observable/observable.component';
 import { TestHttpComponent } from './components/test-http/test-http.component';
+import { AddCvComponent } from './cv/add-cv/add-cv.component';
+import { AuthInterceptor } from './auth/interceptor/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -72,6 +74,7 @@ import { TestHttpComponent } from './components/test-http/test-http.component';
     LoginComponent,
     ObservableComponent,
     TestHttpComponent,
+    AddCvComponent,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +84,14 @@ import { TestHttpComponent } from './components/test-http/test-http.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [LoggerService],
+  providers: [
+    LoggerService,
+    {
+      useClass: AuthInterceptor,
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

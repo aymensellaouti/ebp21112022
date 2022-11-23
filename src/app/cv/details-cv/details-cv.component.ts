@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CvService } from '../services/cv.service';
 import { ROUTES } from '../../config/routes.config';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../../auth/service/auth.service';
 
 @Component({
   selector: 'app-details-cv',
@@ -16,7 +17,8 @@ export class DetailsCvComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private cvService: CvService,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    public authService: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -37,7 +39,9 @@ export class DetailsCvComponent implements OnInit {
       this.cvService.deleteCv(this.cv.id).subscribe({
         next: (success) => {
           this.router.navigate([ROUTES.cv]);
-          this.toastr.success(`Le cv de ${this.cv?.name} a été supprimé avec succès`)
+          this.toastr.success(
+            `Le cv de ${this.cv?.name} a été supprimé avec succès`
+          );
         },
         error: (e) => {
           this.toastr.error('Veuillez contacter l admin');

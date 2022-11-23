@@ -49,11 +49,11 @@ export class CvService {
     return this.cvs.find((cv) => cv.id == id) ?? null;
   }
   deleteCv(id: number): Observable<any> {
-    const params = new HttpParams().set(
+    /*     const params = new HttpParams().set(
       'access_token',
       localStorage.getItem('token') ?? ''
-    );
-    return this.http.delete<Cv>(API.cv + id, {params});
+    ); */
+    return this.http.delete<Cv>(API.cv + id);
   }
   deleteFakeCv(cv: Cv): Boolean {
     const index = this.cvs.indexOf(cv);
