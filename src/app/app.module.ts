@@ -33,6 +33,8 @@ import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { Nf404Component } from './components/nf404/nf404.component';
 import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
+import { TestFormComponent } from './components/test-form/test-form.component';
+import { LoginComponent } from './component/login/login.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,8 @@ import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
     NavbarComponent,
     Nf404Component,
     DetailsCvComponent,
+    TestFormComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

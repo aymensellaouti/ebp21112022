@@ -24,6 +24,9 @@ export class DetailsCvComponent implements OnInit {
         this.router.navigate([ROUTES.cv]);
       }
     });
+    this.activatedRoute.queryParams.subscribe((qp) => {
+      console.log('qp : ', qp);
+    });
   }
   delete(): void {
     if (this.cv) {
